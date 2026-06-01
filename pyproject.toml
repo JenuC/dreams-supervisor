@@ -1,0 +1,26 @@
+[project]
+name = "dreams-agent-skeleton"
+version = "0.1.0"
+description = "Minimal LangGraph + FastMCP skeleton for DREAMS-style microscopy automation."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "fastmcp>=2.14.5",
+    "langchain>=0.3.0",
+    "langchain-openai>=0.3.0",
+    "langgraph>=0.2.0",
+    "numpy>=2.0.0",
+    "python-dotenv>=1.0.0",
+]
+
+[project.scripts]
+dreams-local = "src.main:run"
+dreams-mcp = "src.mcp_main:run"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]
